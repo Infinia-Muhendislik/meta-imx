@@ -21,6 +21,7 @@ PACKAGECONFIG_GRAPHICS:imxgpu2d = "${@bb.utils.contains('DISTRO_FEATURES', 'x11'
 PACKAGECONFIG_GRAPHICS:imxgpu3d = "gles2 \
                              ${PACKAGECONFIG_GRAPHICS_IMX_GPU}"
 PACKAGECONFIG_GRAPHICS:use-mainline-bsp ?= "gles2 gbm kms"
+PACKAGECONFIG_DEFAULT += " sql-sqlite"
 
 PACKAGECONFIG_PLATFORM          = ""
 PACKAGECONFIG_PLATFORM:imxgpu2d = "no-opengl linuxfb"
