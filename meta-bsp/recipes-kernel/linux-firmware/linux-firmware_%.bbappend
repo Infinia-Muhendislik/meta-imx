@@ -2,7 +2,7 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-IMX_FIRMWARE_SRC ?= "git://github.com/NXP/imx-firmware.git;protocol=https"
+IMX_FIRMWARE_SRC ?= "git://github.com/Infinia-Muhendislik/imx-firmware.git;protocol=https"
 SRCBRANCH_imx-firmware = "lf-5.15.71_2.2.0"
 SRC_URI += " \
     git://github.com/murata-wireless/qca-linux-calibration.git;protocol=https;branch=master;name=murata-qca;destsuffix=murata-qca \
@@ -56,6 +56,16 @@ do_install:append () {
     # Install NXP Connectivity
     install -d ${D}${nonarch_base_libdir}/firmware/nxp
     install -m 0644 ${WORKDIR}/imx-firmware/nxp/wifi_mod_para.conf    ${D}${nonarch_base_libdir}/firmware/nxp
+    
+    # Install ATWIL Connectivity    
+    install -d ${D}${nonarch_base_libdir}/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/LICENSE.wilc_fw ${D}/lib/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/README.md ${D}/lib/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc1000_wifi_firmware.bin ${D}/lib/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_ble_firmware.bin ${D}/lib/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_ble_firmware_no_rtc.bin ${D}/lib/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_wifi_firmware.bin ${D}/lib/firmware/mchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_wifi_firmware_ua.bin ${D}/lib/firmware/mchp
 
     # Install NXP Connectivity SD8801 firmware
     install -m 0644 ${WORKDIR}/imx-firmware/nxp/FwImage_8801_SD/ed_mac_ctrl_V1_8801.conf  ${D}${nonarch_base_libdir}/firmware/nxp
@@ -131,3 +141,4 @@ FILES:${PN}-bcm4359-pcie = " \
 FILES:${PN}-nxp89xx = " \
        ${nonarch_base_libdir}/firmware/nxp/* \
 "
+FILES:${PN}-mchp = "/lib/firmware/mchp/* "
