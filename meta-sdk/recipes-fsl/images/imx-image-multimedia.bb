@@ -14,6 +14,11 @@ inherit core-image
 ###          to provide a way for users to reproduce the image used during
 ###          the validation process of i.MX BSP releases.
 
+IMAGE_FSTYPES = " wic "
+
+CORE_IMAGE_EXTRA_INSTALL += " wayland weston "
+DISTRO_FEATURES:append = ' wayland wifi glib ipv6 ipv4 ipsec'
+
 ## Select Image Features
 IMAGE_FEATURES += " \
     debug-tweaks \
@@ -59,3 +64,58 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     ${DOCKER} \
     ${G2D_SAMPLES} \
 "
+
+IMAGE_INSTALL:append = " \
+			uuu \
+			nxp-wlan-sdk \
+			kernel-module-nxp89xx \
+			dhcpcd \
+			lshw \
+			p7zip \
+			apt \
+			mpg123 \
+			i2c-tools \
+			minicom \
+			ethtool \
+			eth-config \	
+			glibc \
+			rsync \
+			sqlite3 \
+			cronie \
+			packagegroup-qt6-essentials \
+			packagegroup-qt6-imx  \
+			qtserialbus \
+			qtcharts  \
+			qtvirtualkeyboard  \
+			linux-firmware-rtl8188 \
+			linux-firmware-mt7601u \
+			linux-firmware-mchp \
+			read-edid \
+			grub  \
+			grub-bootconf  \
+			grub-efi  \
+			python3-pyserial \
+			pulseaudio \
+			alsa-plugins \
+			alsa-lib \
+			alsa-tools \
+			alsa-utils \
+			imx-codec \
+			tzdata \
+			modemmanager \
+			wpa-supplicant \
+			networkmanager \
+			python3-pytz \
+			libgpiod \
+                       libgpiod-tools \
+"
+
+EXTRA_IMAGE_FEATURES ?= " tools-debug tools-sdk"
+SDKMACHINE ?= "x86_64"
+
+
+IMAGE_FEATURES_REMOVE = "nomodeset"
+
+
+BB_NUMBER_THREADS = "4"
+PARALLEL_MAKE = "-j4"
