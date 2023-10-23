@@ -64,6 +64,7 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     ${DOCKER} \
     ${G2D_SAMPLES} \
 "
+PACKAGE_EXCLUDE = " connman connman-client connman-tools"
 
 IMAGE_INSTALL:append = " \
 			uuu \
