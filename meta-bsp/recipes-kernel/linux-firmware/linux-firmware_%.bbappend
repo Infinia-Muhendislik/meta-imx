@@ -141,4 +141,6 @@ FILES:${PN}-bcm4359-pcie = " \
 FILES:${PN}-nxp89xx = " \
        ${nonarch_base_libdir}/firmware/nxp/* \
 "
-FILES:${PN}-mchp = "/lib/firmware/mchp/* "
+FILES:${PN}-mchp = " \
+       ${nonarch_base_libdir}/firmware/mchp/* \
+"
