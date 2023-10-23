@@ -61,7 +61,7 @@ do_install:append () {
     install -d ${D}${nonarch_base_libdir}/firmware/mchp
     install -m 0644 ${WORKDIR}/imx-firmware/mchp/LICENSE.wilc_fw ${D}${nonarch_base_libdir}/firmware/mchp
     install -m 0644 ${WORKDIR}/imx-firmware/mchp/README.md ${D}${nonarch_base_libdir}/firmware/mchp
-    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc1000_wifi_firmware.bin ${D}${nonarch_base_libdir}/firmwaremchp
+    install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc1000_wifi_firmware.bin ${D}${nonarch_base_libdir}/firmware/mchp
     install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_ble_firmware.bin ${D}${nonarch_base_libdir}/firmware/mchp
     install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_ble_firmware_no_rtc.bin ${D}${nonarch_base_libdir}/firmware/mchp
     install -m 0644 ${WORKDIR}/imx-firmware/mchp/wilc3000_wifi_firmware.bin ${D}${nonarch_base_libdir}/firmware/mchp
