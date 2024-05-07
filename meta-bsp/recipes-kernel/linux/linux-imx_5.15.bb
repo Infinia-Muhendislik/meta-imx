@@ -18,7 +18,7 @@ DEPENDS += "lzop-native bc-native"
 
 SRCBRANCH = "lf-5.15.y"
 LOCALVERSION = "-lts-next"
-KERNEL_SRC ?= "https://github.com/Infinia-Muhendislik/linux-imx.git;protocol=https;branch=${SRCBRANCH}"
+KERNEL_SRC ?= "git://github.com/Infinia-Muhendislik/linux-imx.git;protocol=https;branch=${SRCBRANCH}"
 KBRANCH = "${SRCBRANCH}"
 SRC_URI = "${KERNEL_SRC}"
 
