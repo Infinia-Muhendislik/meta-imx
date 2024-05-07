@@ -89,7 +89,6 @@ IMAGE_INSTALL:append = " \
 			qtvirtualkeyboard  \
 			linux-firmware-rtl8188 \
 			linux-firmware-mt7601u \
-			linux-firmware-mchp \
 			read-edid \
 			grub  \
 			grub-bootconf  \
