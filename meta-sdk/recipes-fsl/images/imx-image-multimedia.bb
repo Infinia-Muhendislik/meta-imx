@@ -14,7 +14,7 @@ inherit core-image
 ###          to provide a way for users to reproduce the image used during
 ###          the validation process of i.MX BSP releases.
 
-IMAGE_FSTYPES = " wic "
+IMAGE_FSTYPES = " wic wic.bz2"
 
 CORE_IMAGE_EXTRA_INSTALL += " wayland weston "
 DISTRO_FEATURES:append = ' wayland wifi glib ipv6 ipv4 ipsec'
