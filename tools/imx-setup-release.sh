@@ -157,8 +157,7 @@ fi
 echo >> conf/local.conf
 echo "# Switch to Debian packaging and include package-management in the image" >> conf/local.conf
 echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
-echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
-echo "IMAGE_FSTYPES += \" wic.bz2\"" >> conf/local.conf 
+echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf 
 echo "BB_NUMBER_THREADS = '4'" >> conf/local.conf
 echo "PARALLEL_MAKE = '-j4'" >> conf/local.conf
 
